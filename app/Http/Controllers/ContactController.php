@@ -20,16 +20,17 @@ class ContactController extends Controller
 		return view('layouts.confirm', $contact);
 	}
 
-	public function thanks(ContactRequest $request) {
+	public function thanks(Request $request) {
 		$contact = $request->all();
 		if($request->action === 'back') {
-			return redirect()->route('contact')->withInput($contact);
-		}
+			return redirect()->route('contact.contact')->withInput($contact);
+		} else {
 
 		$request->session()->regenerateToken();
 
 		// Mail::to('hogehoge@gmail.com')->send(new Contact($contact));
 
 		return view('layouts.thanks');
+		}
 	}
 }

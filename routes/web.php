@@ -16,8 +16,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('contact', 'ContactController@contact')->name('contact');
+Route::get('/contact', 'ContactController@contact')->name('contact.contact');
 
-Route::post('/contact/confirm', 'ContactController@confirm')->name('confirm');
+Route::post('/contact/confirm', 'ContactController@confirm')->name('contact.confirm');
 
-Route::post('/contact/thanks', 'ContactController@thanks')->name('sent');
+Route::post('/contact/thanks', 'ContactController@thanks')->name('contact.thanks');
