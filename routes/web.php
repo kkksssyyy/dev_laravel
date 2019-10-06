@@ -15,11 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('edit', 'ContactController@edit');
 
-Route::get('hello', function () {
-	return '<html><body><h1>Hello</h1><p>This is sample page.</p><body><html>';
-});
+Route::get('contact', 'ContactController@contact')->name('contact');
 
-Route::get('contact', 'ContactController@contact');
+Route::post('/contact/confirm', 'ContactController@confirm')->name('confirm');
 
+Route::post('/contact/thanks', 'ContactController@thanks')->name('sent');
