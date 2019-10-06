@@ -15,7 +15,7 @@
   @if (count($errors) > 0)
   <p> 入力に問題があります。確認してください。 </p>
   @endif
-    <form action="/contact/confirm" method="post">
+    <form action="{{ route('contact.confirm') }}" method="post">
      
 	{{ csrf_field() }}
 
