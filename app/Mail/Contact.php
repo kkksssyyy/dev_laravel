@@ -68,7 +68,8 @@ class Thanks extends Mailable
                 // 固定の内容やアドレスに送る場合
               ->from('example@example.com') // 送信元
               ->subject('[クラウドスミス]ご応募頂きありがとうございました') // メールタイトル
-              ->view('emails.test2'); // メール本文のテンプレートとなるviewを設定
+              ->view('emails.test2') // メール本文のテンプレートとなるviewを設定
+		->with(['content' => $this->content]);
                 //->view('emails.test')は/resources/views/配下のパスを.区切りで
                 //表記する規則になっています。
 
