@@ -27,10 +27,10 @@
         <dd class="form-select">
           <select name="jobCategory" required="required">
             <option value="">選択してください</option>
-            <option value="1">マネージャー、フルスタックエンジニア</option>
-            <option value="2">オープン系システムエンジニア、プログラマー</option>
-            <option value="3">WEB系エンジニア、プログラマー</option>
-            <option value="4">フロントエンドエンジニア、デザイナー</option>
+            <option value="マネージャー、フルスタックエンジニア">マネージャー、フルスタックエンジニア</option>
+            <option value="オープン系システムエンジニア、プログラマー">オープン系システムエンジニア、プログラマー</option>
+            <option value="WEB系エンジニア、プログラマー">WEB系エンジニア、プログラマー</option>
+            <option value="フロントエンドエンジニア、デザイナー">フロントエンドエンジニア、デザイナー</option>
           </select>
         </dd>
           @if ($errors->has('CheckboxGroup2'))
@@ -38,11 +38,11 @@
           @endif
         <dt>お問合せ内容<span>必須</span></dt>
         <dd id="form_select">
-          <input type="checkbox" name="CheckboxGroup2" value="チェックボックス" id="Group1_1" class="checkbox01" /><label for="Group1_1" class="check_label">システム開発</label>
-          <input type="checkbox" name="CheckboxGroup2" value="チェックボックス" id="Group1_2" class="checkbox01" /><label for="Group1_2" class="check_label">WEBサイト構築</label>
-          <input type="checkbox" name="CheckboxGroup2" value="チェックボックス" id="Group1_3" class="checkbox01" /><label for="Group1_3" class="check_label">RPAサービス</label>
-          <input type="checkbox" name="CheckboxGroup2" value="チェックボックス" id="Group1_4" class="checkbox01" /><label for="Group1_4" class="check_label">サーバー構築</label>
-          <input type="checkbox" name="CheckboxGroup2" value="チェックボックス" id="Group1_5" class="checkbox01" /><label for="Group1_5" class="check_label">その他</label>
+          <input type="checkbox" name="CheckboxGroup2" value="システム開発" id="Group1_1" class="checkbox01" /><label for="Group1_1" class="check_label">システム開発</label>
+          <input type="checkbox" name="CheckboxGroup2" value="WEBサイト構築" id="Group1_2" class="checkbox01" /><label for="Group1_2" class="check_label">WEBサイト構築</label>
+          <input type="checkbox" name="CheckboxGroup2" value="RPAサービス" id="Group1_3" class="checkbox01" /><label for="Group1_3" class="check_label">RPAサービス</label>
+          <input type="checkbox" name="CheckboxGroup2" value="サーバー構築" id="Group1_4" class="checkbox01" /><label for="Group1_4" class="check_label">サーバー構築</label>
+          <input type="checkbox" name="CheckboxGroup2" value="その他" id="Group1_5" class="checkbox01" /><label for="Group1_5" class="check_label">その他</label>
         </dd>
         <dt>会社名<span>必須</span></dt>
           @if ($errors->has('name1'))
@@ -79,15 +79,15 @@
           @endif
           <dt>弊社からのご連絡<span>必須</span></dt>
           <dd class="checkboxDD">
-            <label><input type="checkbox" name="renraku" value="1">&nbsp;お電話でのご連絡</label><br>
-            <label><input type="checkbox" name="renraku" value="2">&nbsp;メールでのご連絡</label>
+            <label><input type="checkbox" name="renraku" value="お電話でのご連絡">&nbsp;お電話でのご連絡</label><br>
+            <label><input type="checkbox" name="renraku" value="メールでのご連絡">&nbsp;メールでのご連絡</label>
           </dd>
           <dt>弊社を知ったきっかけ</dt>
           <dd class="checkboxDD">
-            <label><input type="checkbox" name="kikkake" value="1">&nbsp;WEB検索</label><br>
-            <label><input type="checkbox" name="kikkake" value="2">&nbsp;ブログ記事</label><br>
-            <label><input type="checkbox" name="kikkake" value="2">&nbsp;ご紹介</label><br>
-            <label><input type="checkbox" name="kikkake" value="2">&nbsp;その他</label>
+            <label><input type="checkbox" name="kikkake" value="WEB検索">&nbsp;WEB検索</label><br>
+            <label><input type="checkbox" name="kikkake" value="ブログ記事">&nbsp;ブログ記事</label><br>
+            <label><input type="checkbox" name="kikkake" value="ご紹介">&nbsp;ご紹介</label><br>
+            <label><input type="checkbox" name="kikkake" value="その他">&nbsp;その他</label>
           </dd>
 		@if ($errors->has('request'))
 			<p>{{$errors->first('request')}}</p>

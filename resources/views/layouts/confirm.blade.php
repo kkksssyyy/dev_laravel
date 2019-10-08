@@ -16,6 +16,11 @@
 
 	<table>
 	<tr>
+        <td>ご希望の職種</td>
+        <td>{{$jobCategory}}</td>
+        </tr>
+        <tr>
+	<tr>
 	<td>お問い合わせ内容</td>
 	<td>{{$CheckboxGroup2}}</td>
 	</tr>
@@ -25,7 +30,7 @@
         </tr>
 	<tr>
         <td>URL</td>
-        <td>{{$url}}</td>
+        <td>{{$url ?? ''}}</td>
         </tr>
 	<tr>
         <td>お名前</td>
@@ -53,7 +58,7 @@
         </tr>
 	<tr>
         <td>弊社を知ったきっかけ</td>
-        <td>{{$kikkake}}</td>
+	<td>{{$kikkake ?? '' }}</td>
         </tr>
 	<tr>
         <td>お問い合わせ内容</td>
@@ -63,20 +68,20 @@
 
 	<form action="{{ route('contact.thanks') }}" method="post">
 	@csrf
+	<input type="hidden" name="jobCategory" value="{{$jobCategory}}"></input>
 	<input type="hidden" name="CheckboxGroup2" value="{{$CheckboxGroup2}}"></input>
 	<input type="hidden" name="name1" value="{{$name1}}"></input>
-	<input type="hidden" name="url" value="{{$url}}"></input>
+	<input type="hidden" name="url" value="{{$url ?? ''}}"></input>
         <input type="hidden" name="name2" value="{{$name2}}"></input>
         <input type="hidden" name="name3" value="{{$name3}}"></input>
         <input type="hidden" name="mail" value="{{$mail}}"></input>
         <input type="hidden" name="mail_confirmation" value="{{$mail_confirmation}}"></input>
         <input type="hidden" name="tel" value="{{$tel}}"></input>
         <input type="hidden" name="renraku" value="{{$renraku}}"></input>
-        <input type="hidden" name="kikkake" value="{{$kikkake}}"></input>
+        <input type="hidden" name="kikkake" value="{{$kikkake ?? ''}}"></input>
         <input type="hidden" name="request" value="{{$request}}"></input>
 	<button type="submit" name="action" value="back">戻る</button>
 	<button type="submit" name="action" value="sent">送信</button>
-	<input type="submit" name="" value="送信">
 	</form>
       </div>
     </div>
