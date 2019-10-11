@@ -7,6 +7,7 @@ use App\Http\Requests\ContactRequest;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\Contact;
 use App\Mail\Thanks;
+use App\Contactt;
 
 
 class ContactController extends Controller
@@ -32,8 +33,14 @@ class ContactController extends Controller
 
 		// フォームからのリクエストデータ全てを$contentに代入
 		$content = $request->all();
-		// 変数を受け取らない場合
 
+                $this->validate($request, Contactt::$rules);
+                $contacts = new Contactt;
+		unset($contact['_token']);
+		unset($contact['action']);
+		$contacts->fill($contact)->save();
+
+		// 変数を受け取らない場合
 		Mail::to($content['mail'])->send(new Thanks($content));
 
 		// 変数を受け取る場合
